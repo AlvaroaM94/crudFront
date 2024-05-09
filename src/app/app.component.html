@@ -1,73 +1,90 @@
 <div class="container">
-  <h1 class="mt-5">Hola</h1>
-<table class="table">
+  <h1 class="mt-5">USUARIOS REGISTRADOS</h1>
+  <br>
+<table class="table" style="border-radius:black; text-align: center;">
   <thead>
     <tr>
+      <th>Id</th>
       <th>Usuario</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let curso of cursos">
       <td>{{curso.userId}}</td>
-    </tr>
-    <tr *ngFor="let curso of cursos">
       <td>{{curso.userName}}</td>
     </tr>
   </tbody>
 </table>
-
-<div class="col-md-6">
-  <h5>Nuevo</h5>
-    <form (ngSubmit)="crear()">
-      <div class="mb-2">
-        <label for="Email">Email</label>
-        <input type="text" id="Email" placeholder="Email" class="form-control" name="Email"
-        [(ngModel)]="nuevo.email">
-      </div>
-      <div class="mb-2">
-        <label for="FirstName">FirstName</label>
-        <input type="text" id="FirstName" placeholder="FirstName" class="form-control" name="FirstName"
-        [(ngModel)]="nuevo.first_name">
-      </div>
-      <div class="mb-2">
-        <label for="LastName">LastName</label>
-        <input type="text" id="LastName" placeholder="LastName" class="form-control" name="LastName"
-        [(ngModel)]="nuevo.last_name">
-      </div>
-      <div class="mb-2">
-        <label for="MiddleName">MiddleName</label>
-        <input type="text" id="MiddleName" placeholder="MiddleName" class="form-control" name="MiddleName"
-        [(ngModel)]="nuevo.middle_name">
-      </div>
-      <div class="mb-2">
-        <label for="Password">Password</label>
-        <input type="text" id="Password" placeholder="Password" class="form-control" name="Password"
-        [(ngModel)]="nuevo.password">
-      </div>
-      <div class="mb-2">
-        <label for="UserName">UserName</label>
-        <input type="text" id="UserName" placeholder="UserName" class="form-control" name="UserName"
-        [(ngModel)]="nuevo.userName">
-      </div>
-      <div class="mb-2">
-        <label for="id">Id</label>
-        <input type="text" id="id" placeholder="id" class="form-control" name="id"
-        [(ngModel)]="nuevo.user_id">
-      </div>
-      <div class="mb-2">
-          <button class="btn btn-primary">Guardar</button>
-      </div>
-    </form>
-
-    <div class="mb-2">
-      <input type="text" #BuscarPorId>
-      <button class="btn btn-primary"(click)="buscarPorId(BuscarPorId.value)" >Buscar</button>
+<hr style="padding: 5px;
+background-color: cornflowerblue;">
+<div class="row" style="margin-top: 30px;">
+  <div class="col-6">
+    <h5>Registra un nuevo usuario</h5>
+      <form (ngSubmit)="crear()">
+        <div class="mb-2">
+          <label for="Email">Email</label>
+          <input type="text" id="Email" placeholder="Email" class="form-control" name="Email"
+          [(ngModel)]="nuevo.email">
+        </div>
+        <div class="mb-2">
+          <label for="FirstName">FirstName</label>
+          <input type="text" id="FirstName" placeholder="FirstName" class="form-control" name="FirstName"
+          [(ngModel)]="nuevo.first_name">
+        </div>
+        <div class="mb-2">
+          <label for="LastName">LastName</label>
+          <input type="text" id="LastName" placeholder="LastName" class="form-control" name="LastName"
+          [(ngModel)]="nuevo.last_name">
+        </div>
+        <div class="mb-2">
+          <label for="MiddleName">MiddleName</label>
+          <input type="text" id="MiddleName" placeholder="MiddleName" class="form-control" name="MiddleName"
+          [(ngModel)]="nuevo.middle_name">
+        </div>
+        <div class="mb-2">
+          <label for="Password">Password</label>
+          <input type="text" id="Password" placeholder="Password" class="form-control" name="Password"
+          [(ngModel)]="nuevo.password">
+        </div>
+        <div class="mb-2">
+          <label for="UserName">UserName</label>
+          <input type="text" id="UserName" placeholder="UserName" class="form-control" name="UserName"
+          [(ngModel)]="nuevo.userName">
+        </div>
+        <div class="mb-2">
+          <label for="id">Id</label>
+          <input type="text" id="id" placeholder="id" class="form-control" name="id"
+          [(ngModel)]="nuevo.user_id">
+        </div>
+        <div class="mb-2">
+            <button class="btn btn-primary">Guardar</button>
+        </div>
+      </form>    
   </div>
-  <div>
-    id: {{this.id.userId}}
-  </div> 
-  <div>
-    nombre: {{this.id.userName}}
-  </div>    
+  <div class="col-6">
+    <h5>Busca un usuario por id</h5>
+    <div class="mb-2">
+      <label for="id">Id</label>
+      <input type="text" placeholder="Id" class="form-control" name="Id" #BuscarPorId>
+    </div>
+    <div class="mb-2">
+      <button class="btn btn-primary"(click)="buscarPorId(BuscarPorId.value)" >Buscar</button>
+    </div>
+    <table style="border-radius:black; text-align: center;">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Usuario</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{this.id.userId}}</td>
+        <td>{{this.id.userName}}</td>
+      </tr>
+    </tbody></table>
+  </div>
 </div>
+<hr style="padding: 5px;
+background-color: cornflowerblue;">  
 </div>
