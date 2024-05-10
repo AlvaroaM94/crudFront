@@ -86,5 +86,69 @@ background-color: cornflowerblue;">
   </div>
 </div>
 <hr style="padding: 5px;
-background-color: cornflowerblue;">  
+background-color: cornflowerblue;">
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-6">
+      <h5>Actualizar un usuario</h5>
+        <form (ngSubmit)="actualizarUsuario(Actualizar.value)">
+          <input type="text" placeholder="Id" class="form-control" name="Id" #Actualizar>
+          <div class="mb-2">
+            <label for="Email">Email</label>
+            <input type="text" id="Email" placeholder="Email" class="form-control" name="Email"
+            [(ngModel)]="actualizar.email">
+          </div>
+          <div class="mb-2">
+            <label for="FirstName">FirstName</label>
+            <input type="text" id="FirstName" placeholder="FirstName" class="form-control" name="FirstName"
+            [(ngModel)]="actualizar.first_name">
+          </div>
+          <div class="mb-2">
+            <label for="LastName">LastName</label>
+            <input type="text" id="LastName" placeholder="LastName" class="form-control" name="LastName"
+            [(ngModel)]="actualizar.last_name">
+          </div>
+          <div class="mb-2">
+            <label for="MiddleName">MiddleName</label>
+            <input type="text" id="MiddleName" placeholder="MiddleName" class="form-control" name="MiddleName"
+            [(ngModel)]="actualizar.middle_name">
+          </div>
+          <div class="mb-2">
+            <label for="Password">Password</label>
+            <input type="text" id="Password" placeholder="Password" class="form-control" name="Password"
+            [(ngModel)]="actualizar.password">
+          </div>
+          <div class="mb-2">
+            <label for="UserName">UserName</label>
+            <input type="text" id="UserName" placeholder="UserName" class="form-control" name="UserName"
+            [(ngModel)]="actualizar.userName">
+          </div>
+          <div class="mb-2">
+              <button class="btn btn-primary">Actualizar</button>
+          </div>
+        </form>    
+    </div>
+    <div class="col-6">
+      <h5>Eliminar Usuario</h5>
+      <div class="mb-2">
+        <label for="id">Id</label>
+        <input type="text" placeholder="Id" class="form-control" name="Id" #Eliminar>
+      </div>
+      <div class="mb-2">
+        <button class="btn btn-primary"(click)="eliminarUsuario(Eliminar.value)" >Eliminar</button>
+      </div>
+      <table style="border-radius:black; text-align: center;">
+        <thead>
+        <tr>
+          <th>Id</th>
+          <th>Usuario</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{this.id.userId}}</td>
+          <td>{{this.id.userName}}</td>
+        </tr>
+      </tbody></table>
+    </div>
+  </div>
 </div>
